@@ -8,6 +8,10 @@ CREATE TABLE `seguros_db`.`paciente` (
   `email` VARCHAR(100) NULL,
   `plan` VARCHAR(50) NULL,
   PRIMARY KEY (`DNI`),
+  INDEX (id_Inst),
+  FOREIGN KEY (id_Inst) REFERENCES institucion(id_Inst),
+  INDEX (id_seg),
+  FOREIGN KEY (id_seg) REFERENCES seguro(id_seg),
   UNIQUE INDEX `DNI_UNIQUE` (`DNI` ASC) VISIBLE);
   
   CREATE TABLE `seguros_db`.`seguro` (
@@ -15,6 +19,8 @@ CREATE TABLE `seguros_db`.`paciente` (
   `Instituciones` INT NULL,
   `nombre` VARCHAR(100) NULL,
   PRIMARY KEY (`id_seg`),
+  INDEX (Instituciones),
+  FOREIGN KEY (id_Inst) REFERENCES institucion(id_Inst),
   UNIQUE INDEX `id_seg_UNIQUE` (`id_seg` ASC) VISIBLE);
   
   CREATE TABLE `seguros_db`.`institucion` (
@@ -22,6 +28,8 @@ CREATE TABLE `seguros_db`.`paciente` (
   `id_med` INT NULL,
   `nombre` VARCHAR(100) NULL,
   PRIMARY KEY (`id_Inst`),
+  INDEX (id_med),
+  FOREIGN KEY (id_med) REFERENCES medicos(id_med),
   UNIQUE INDEX `id_Inst_UNIQUE` (`id_Inst` ASC) VISIBLE);
   
   CREATE TABLE `seguros_db`.`medicos` (
@@ -42,4 +50,12 @@ CREATE TABLE `seguros_db`.`paciente` (
   `Desc` VARCHAR(100) NULL,
   `img` VARCHAR(50) NULL,
   PRIMARY KEY (`id_est`),
+  INDEX (n_mat),
+  FOREIGN KEY (n_mat) REFERENCES medicos(n_mat),
+  INDEX (id_inst),
+  FOREIGN KEY (id_inst) REFERENCES institucion(id_inst),
+  INDEX (id_seg),
+  FOREIGN KEY (id_seg) REFERENCES seguro(id_seg),
+  INDEX (DNI),
+  FOREIGN KEY (DNI) REFERENCES paciente(DNI),
   UNIQUE INDEX `id_est_UNIQUE` (`id_est` ASC) VISIBLE);
