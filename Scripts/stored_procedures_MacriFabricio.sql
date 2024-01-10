@@ -1,10 +1,10 @@
-USE seguros_db;
+USE `seguros_db`;
+DROP procedure IF EXISTS `medic_area_order`;
 
-DELIMITER //
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `medic_area_order`(IN Referencia VARCHAR(50))
+DELIMITER $$
+USE `seguros_db`$$
+CREATE PROCEDURE `medic_area_order` (Referencia VARCHAR(50))
 BEGIN
--- EN caso que se envie un area filtramos por esta
 IF Referencia <> '' THEN 
 		SET @area_order = concat('WHERE Esp = "', Referencia, '";');
         
@@ -18,10 +18,11 @@ IF Referencia <> '' THEN
     PREPARE runSQL FROM @clausula;
     EXECUTE runSQL;
     DEALLOCATE PREPARE runSQL;
-END
+END$$
 
 DELIMITER ;
-DELIMITER //
+DELIMITER $$
+DROP procedure IF EXISTS `EliminarFilasAntiguas`;
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarFilasAntiguas`()
 BEGIN
@@ -32,11 +33,12 @@ BEGIN
     -- Eliminamos las filas con mas de 10 años de antiguedad
     DELETE FROM estudios
     WHERE Fecha < fecha_limite;
-END
+END$$
+
 DELIMITER ;
 
 -- Ejemplos de uso:
--- call seguros_db.EliminarFilasAntiguas();
+-- call seguros_db.EliminarFilasAntiguas(); // En el Script TCL se utiliza para probarlo sin perder los datos
 -- call seguros_db.medic_area_order("orthopedics");
 -- call seguros_db.medic_area_order("neurology");
 -- call seguros_db.medic_area_order("dermatology");

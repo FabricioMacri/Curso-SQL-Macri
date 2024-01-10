@@ -8,7 +8,7 @@ BEGIN
     DECLARE dcumento INT;
 
     -- Realizar la búsqueda en la tabla
-    SELECT dni INTO dcumento FROM paciente WHERE nombre = nombre_buscar;
+    SELECT dni INTO dcumento FROM pacientes WHERE nombre = nombre_buscar;
 
     -- Retornar el resultado
     RETURN dcumento;
@@ -29,8 +29,9 @@ BEGIN
     -- Retornar el resultado
     RETURN especialidad;
 END //
-
 DELIMITER ;
+
 -- Ejemplo de uso de la función
-SELECT especialidadMedico('55078') AS especialidad;
+SELECT BuscarPorNombre('Vale Marre') AS DNI;
+SELECT especialidadMedico('51373') AS especialidad;
 

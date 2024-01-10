@@ -1,0 +1,68 @@
+-- Script para insertar todos los medicos en la base de datos mediante trasacciones TCL 
+--  para una insercion mas segura
+
+USE seguros_db;
+START TRANSACTION;
+
+insert into medicos (mat, id_inst, nombre, esp) values ('917040', '3426', 'Constancy Halton', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('483672', '3426', 'Bent Dunseath', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('763004', '3426', 'Carlo Massie', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('169649', '3426', 'Maudie Audenis', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('765790', '3426', 'Giorgi Getten', 'gastroenterology');
+SAVEPOINT medicos1;
+insert into medicos (mat, id_inst, nombre, esp) values ('300867', '6290', 'Merrie Felix', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('839251', '6290', 'Ferdinand Ruberti', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('922047', '6290', 'Shirley Hansbury', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('136272', '6290', 'Camel Gilardi', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('315217', '6290', 'Emilee Barrow', 'gastroenterology');
+SAVEPOINT medicos2;
+insert into medicos (mat, id_inst, nombre, esp) values ('377903', '1101', 'Danna Findlay', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('803352', '1101', 'Sasha Pummery', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('400619', '1101', 'Drusi Shankle', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('462418', '1101', 'Rees Aplin', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('010639', '1101', 'Robb McLelland', 'gastroenterology');
+SAVEPOINT medicos3;
+insert into medicos (mat, id_inst, nombre, esp) values ('917490', '8423', 'Priscella Reinbeck', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('778123', '8423', 'Edmon Leethem', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('173816', '8423', 'Coretta Bakesef', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('922602', '8423', 'Charmion Canwell', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('211637', '8423', 'Chauncey Probin', 'gastroenterology');
+SAVEPOINT medicos4;
+insert into medicos (mat, id_inst, nombre, esp) values ('967695', '2860', 'Yolanthe Schriren', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('278742', '2860', 'Teodora Bowmer', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('512204', '2860', 'Aloysius Cradey', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('870857', '2860', 'Tiebold Duffrie', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('182614', '2860', 'Saw Cayser', 'gastroenterology');
+SAVEPOINT medicos5;
+insert into medicos (mat, id_inst, nombre, esp) values ('940948', '0776', 'Emmerich Darrigoe', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('351369', '0776', 'Estevan Jerrans', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('063527', '0776', 'Cam Tanman', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('063155', '0776', 'Kitti Bilbey', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('881636', '0776', 'Harmonie Ilyinski', 'gastroenterology');
+SAVEPOINT medicos6;
+insert into medicos (mat, id_inst, nombre, esp) values ('295005', '1364', 'Berkly Axtens', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('546387', '1364', 'Glenna de Guerre', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('581061', '1364', 'Sukey Konertz', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('808723', '1364', 'Patrice Impy', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('545474', '1364', 'Sheba Talbot', 'gastroenterology');
+SAVEPOINT medicos7;
+insert into medicos (mat, id_inst, nombre, esp) values ('096221', '2068', 'Eddie Bryan', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('885271', '2068', 'Danny Kirsop', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('698277', '2068', 'Petronia Karlolczak', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('255771', '2068', 'Jard Dominici', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('440759', '2068', 'Rene Gerhartz', 'gastroenterology');
+SAVEPOINT medicos8;
+insert into medicos (mat, id_inst, nombre, esp) values ('646294', '2746', 'Kaine Flea', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('436406', '2746', 'Marilyn Southouse', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('051373', '2746', 'Hermina Goldsbury', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('174992', '2746', 'Emyle Johnston', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('545460', '2746', 'Risa Simister', 'gastroenterology');
+SAVEPOINT medicos9;
+insert into medicos (mat, id_inst, nombre, esp) values ('774317', '4495', 'Benedict Berick', 'cardiology');
+insert into medicos (mat, id_inst, nombre, esp) values ('334888', '4495', 'Keeley Burleton', 'neurology');
+insert into medicos (mat, id_inst, nombre, esp) values ('774670', '4495', 'Jeth Hirtz', 'dermatology');
+insert into medicos (mat, id_inst, nombre, esp) values ('304067', '4495', 'Fredrika Baily', 'orthopedics');
+insert into medicos (mat, id_inst, nombre, esp) values ('105602', '4495', 'Amie Hindenburg', 'gastroenterology');
+SAVEPOINT medicos10;
+
+COMMIT;
