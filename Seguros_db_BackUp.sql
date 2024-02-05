@@ -18,6 +18,8 @@
 --
 -- Table structure for table `estudios`
 --
+CREATE SCHEMA seguros_db;
+USE seguros_db;
 
 DROP TABLE IF EXISTS `estudios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
