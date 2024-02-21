@@ -2,6 +2,8 @@ USE seguros_db;
 
 DELIMITER //
 
+-- Esta funcion permite por medio del nombre obtener el DNI de un paciente
+
 CREATE FUNCTION BuscarPorNombre(nombre_buscar VARCHAR(50))
 RETURNS INT DETERMINISTIC
 BEGIN
@@ -17,6 +19,8 @@ END //
 DELIMITER ;
 
 DELIMITER //
+
+-- Esta funcion permite obtener por medio de la matricula la especialidad de un medico
 
 CREATE FUNCTION especialidadMedico(matricula VARCHAR(50))
 RETURNS VARCHAR(50) DETERMINISTIC

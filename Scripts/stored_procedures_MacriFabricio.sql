@@ -3,6 +3,9 @@ DROP procedure IF EXISTS `medic_area_order`;
 
 DELIMITER $$
 USE `seguros_db`$$
+
+-- Este procedimiento permite traer todos los estudios de una area medica en particular
+
 CREATE PROCEDURE `medic_area_order` (Referencia VARCHAR(50))
 BEGIN
 IF Referencia <> '' THEN 
@@ -22,6 +25,9 @@ END$$
 
 DELIMITER ;
 DELIMITER $$
+
+-- Este procedimiento elimina todos los estudios que tienen mas de 10 años de antiguedad
+
 DROP procedure IF EXISTS `EliminarFilasAntiguas`;
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `EliminarFilasAntiguas`()

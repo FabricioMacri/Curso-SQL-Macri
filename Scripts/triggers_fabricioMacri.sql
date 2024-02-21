@@ -2,12 +2,17 @@
 DROP TRIGGER IF EXISTS `seguros_db`.`pacientes_BEFORE_DELETE`;
 
 DELIMITER $$
+
+-- Este trigger se dispara luego de eliminar a un paciente, eliminando tambien los estudios vinculados a el
+
 USE `seguros_db`$$
 CREATE DEFINER = CURRENT_USER TRIGGER `seguros_db`.`pacientes_BEFORE_DELETE` BEFORE DELETE ON `pacientes` FOR EACH ROW
 BEGIN
 DELETE FROM estudios WHERE DNI = OLD.DNI;
 END$$
 DELIMITER ;
+
+-- Este trigger deja registro de que usuario inserto a un paciente en la base de datos
 
 DROP TRIGGER IF EXISTS `seguros_db`.`pacientes_BEFORE_INSERT`;
 DELIMITER //

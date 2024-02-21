@@ -1,6 +1,8 @@
+CREATE DATABASE  IF NOT EXISTS `seguros_db` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `seguros_db`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
--- Host: localhost    Database: seguros_db
+-- Host: 127.0.0.1    Database: seguros_db
 -- ------------------------------------------------------
 -- Server version	8.0.35
 
@@ -16,10 +18,80 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `analisis_orina`
+--
+
+DROP TABLE IF EXISTS `analisis_orina`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `analisis_orina` (
+  `id_analisis_s` int unsigned NOT NULL AUTO_INCREMENT,
+  `DNI` int DEFAULT NULL,
+  `id_seguro` int DEFAULT NULL,
+  `id_inst` int DEFAULT NULL,
+  `hematies` int DEFAULT NULL,
+  `leucocitos` int DEFAULT NULL,
+  `cristales` varchar(45) DEFAULT NULL,
+  `epiteliales` varchar(45) DEFAULT NULL,
+  `cilindros` varchar(45) DEFAULT NULL,
+  `germenes` varchar(45) DEFAULT NULL,
+  `mocus` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`id_analisis_s`),
+  UNIQUE KEY `id_analisis_s_UNIQUE` (`id_analisis_s`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `analisis_orina`
+--
+
+LOCK TABLES `analisis_orina` WRITE;
+/*!40000 ALTER TABLE `analisis_orina` DISABLE KEYS */;
+INSERT INTO `analisis_orina` VALUES (1,32408281,471,776,5,12,'47','Abundantes','Se observan','No se observan','Se observan'),(2,30954371,3993,776,4,15,'39','Normal','Se observan','Se observan','Se observan'),(3,10484173,7699,776,5,13,'39','Escasas','No se observan','No se observan','Se observan'),(4,24313407,5673,776,4,13,'42','Escasas','No se observan','No se observan','No se observan'),(5,30954371,3993,776,4,14,'43','Normal','Se observan','No se observan','Se observan'),(6,2101411,4634,776,4,14,'46','Abundantes','Se observan','No se observan','Se observan'),(7,24313407,5673,776,5,14,'39','Escasas','No se observan','Se observan','No se observan'),(8,8201738,2021,776,5,14,'44','Abundantes','Se observan','Se observan','Se observan'),(9,24313407,5673,776,5,12,'43','Escasas','No se observan','Se observan','Se observan'),(10,21055563,3979,776,5,15,'44','Normal','No se observan','No se observan','Se observan'),(11,10690610,4698,1101,5,13,'41','Escasas','Se observan','No se observan','No se observan'),(12,10008053,2179,1101,5,12,'38','Normal','Se observan','No se observan','Se observan'),(13,4020089,7746,1101,4,12,'39','Escasas','No se observan','No se observan','Se observan'),(14,30954371,3993,1101,5,13,'44','Escasas','No se observan','No se observan','Se observan'),(15,10008053,2179,1101,5,13,'45','Escasas','Se observan','No se observan','No se observan'),(16,21055563,3979,1101,5,15,'40','Normal','Se observan','Se observan','No se observan'),(17,22844894,4698,1101,4,13,'46','Escasas','No se observan','No se observan','No se observan'),(18,12716747,1688,1101,4,15,'40','Escasas','Se observan','No se observan','No se observan'),(19,10690610,4698,1101,5,13,'42','Normal','No se observan','No se observan','No se observan'),(20,10008053,2179,1101,5,14,'38','Normal','No se observan','No se observan','No se observan'),(21,27441537,6716,1364,5,12,'39','Normal','Se observan','Se observan','No se observan'),(22,28381701,6716,1364,5,15,'45','Abundantes','Se observan','No se observan','No se observan'),(23,10690610,4698,1364,4,12,'41','Escasas','Se observan','Se observan','No se observan'),(24,21055563,3979,1364,5,12,'41','Abundantes','Se observan','No se observan','No se observan'),(25,10690610,4698,1364,4,12,'38','Normal','No se observan','Se observan','No se observan'),(26,14281833,7746,1364,4,15,'45','Normal','Se observan','No se observan','No se observan'),(27,3174656,1586,1364,4,13,'48','Abundantes','Se observan','Se observan','Se observan'),(28,22844894,4698,1364,5,12,'41','Normal','Se observan','No se observan','Se observan'),(29,5583783,3979,1364,4,14,'46','Abundantes','No se observan','Se observan','Se observan'),(30,24313407,5673,1364,5,14,'39','Escasas','No se observan','Se observan','Se observan'),(31,24313407,5673,2068,5,14,'39','Escasas','No se observan','No se observan','Se observan'),(32,5583783,3979,2068,5,15,'41','Abundantes','No se observan','No se observan','No se observan'),(33,8033642,7746,2068,4,14,'45','Abundantes','No se observan','No se observan','Se observan'),(34,24313407,5673,2068,5,13,'38','Normal','Se observan','No se observan','No se observan'),(35,8033642,7746,2068,5,14,'46','Normal','No se observan','Se observan','Se observan'),(36,5583783,3979,2068,5,14,'40','Escasas','No se observan','Se observan','Se observan'),(37,27441537,6716,2068,4,12,'45','Normal','No se observan','Se observan','Se observan'),(38,28381701,6716,2068,4,15,'39','Normal','No se observan','No se observan','No se observan'),(39,8033642,7746,2068,4,15,'39','Normal','Se observan','No se observan','Se observan'),(40,14281833,7746,2068,5,12,'41','Normal','No se observan','Se observan','No se observan'),(41,3174656,1586,2746,4,14,'48','Abundantes','No se observan','No se observan','No se observan'),(42,5583783,3979,2746,5,15,'38','Normal','Se observan','No se observan','No se observan'),(43,28381701,6716,2746,5,13,'43','Abundantes','Se observan','Se observan','No se observan'),(44,8033642,7746,2746,4,12,'40','Abundantes','No se observan','No se observan','Se observan'),(45,32408281,471,2746,5,13,'46','Abundantes','Se observan','Se observan','No se observan'),(46,2101411,4634,2746,5,14,'46','Normal','Se observan','No se observan','Se observan'),(47,7209476,2179,2746,5,13,'39','Normal','No se observan','Se observan','Se observan'),(48,5583783,3979,2746,5,15,'47','Normal','Se observan','Se observan','Se observan'),(49,7209476,2179,2746,5,12,'42','Normal','Se observan','Se observan','No se observan'),(50,10484173,7699,2746,5,12,'48','Abundantes','Se observan','Se observan','Se observan'),(51,5583783,3979,2860,5,13,'40','Escasas','No se observan','Se observan','Se observan'),(52,21055563,3979,2860,4,13,'43','Escasas','Se observan','No se observan','Se observan'),(53,21055563,3979,2860,4,12,'48','Abundantes','Se observan','Se observan','No se observan'),(54,32408281,471,2860,4,15,'48','Escasas','No se observan','Se observan','No se observan'),(55,12716747,1688,2860,5,13,'38','Abundantes','Se observan','Se observan','Se observan'),(56,21220038,3993,2860,4,12,'46','Escasas','No se observan','Se observan','No se observan'),(57,10690610,4698,2860,5,13,'47','Abundantes','Se observan','No se observan','No se observan'),(58,30954371,3993,2860,5,12,'45','Normal','No se observan','No se observan','No se observan'),(59,5583783,3979,2860,4,15,'47','Normal','Se observan','Se observan','No se observan'),(60,30954371,3993,2860,4,14,'43','Normal','No se observan','No se observan','No se observan'),(61,10484173,7699,3426,5,15,'45','Normal','Se observan','Se observan','Se observan'),(62,24313407,5673,3426,4,13,'43','Escasas','Se observan','Se observan','No se observan'),(63,2101411,4634,3426,4,12,'46','Escasas','Se observan','No se observan','Se observan'),(64,24313407,5673,3426,5,15,'43','Abundantes','Se observan','Se observan','No se observan'),(65,30954371,3993,3426,4,12,'45','Escasas','No se observan','No se observan','No se observan'),(66,21055563,3979,3426,4,15,'38','Escasas','No se observan','Se observan','Se observan'),(67,2101411,4634,3426,5,12,'39','Normal','Se observan','No se observan','No se observan'),(68,27441537,6716,3426,5,13,'39','Abundantes','Se observan','Se observan','Se observan'),(69,10008053,2179,3426,4,14,'47','Abundantes','Se observan','No se observan','No se observan'),(70,12716747,1688,3426,4,14,'43','Escasas','Se observan','Se observan','No se observan'),(71,4020089,7746,4495,5,13,'47','Abundantes','No se observan','Se observan','Se observan'),(72,27441537,6716,4495,4,14,'42','Escasas','No se observan','No se observan','Se observan'),(73,10484173,7699,4495,4,15,'45','Escasas','No se observan','Se observan','No se observan'),(74,3174656,1586,4495,5,15,'46','Normal','No se observan','Se observan','Se observan'),(75,21220038,3993,4495,5,12,'39','Escasas','No se observan','No se observan','Se observan'),(76,22844894,4698,4495,5,15,'42','Escasas','No se observan','Se observan','No se observan'),(77,10690610,4698,4495,5,13,'43','Normal','No se observan','Se observan','Se observan'),(78,3174656,1586,4495,5,12,'43','Escasas','No se observan','Se observan','Se observan'),(79,28381701,6716,4495,5,14,'38','Escasas','No se observan','No se observan','Se observan'),(80,28381701,6716,4495,5,13,'41','Normal','No se observan','No se observan','Se observan'),(81,4020089,7746,6290,5,13,'39','Abundantes','Se observan','Se observan','Se observan'),(82,3174656,1586,6290,5,14,'41','Normal','Se observan','Se observan','Se observan'),(83,2101411,4634,6290,5,14,'40','Abundantes','Se observan','No se observan','Se observan'),(84,30954371,3993,6290,4,12,'38','Abundantes','Se observan','Se observan','No se observan'),(85,21220038,3993,6290,5,14,'47','Escasas','No se observan','Se observan','Se observan'),(86,8201738,2021,6290,5,14,'44','Normal','No se observan','Se observan','Se observan'),(87,12716747,1688,6290,4,13,'39','Escasas','No se observan','No se observan','Se observan'),(88,28381701,6716,6290,4,14,'45','Escasas','Se observan','No se observan','Se observan'),(89,27441537,6716,6290,5,13,'43','Escasas','Se observan','Se observan','No se observan'),(90,8201738,2021,6290,5,14,'48','Normal','Se observan','No se observan','No se observan'),(91,10008053,2179,8423,5,12,'43','Abundantes','No se observan','No se observan','Se observan'),(92,10008053,2179,8423,4,13,'40','Abundantes','Se observan','Se observan','No se observan'),(93,7209476,2179,8423,4,14,'44','Escasas','No se observan','No se observan','No se observan'),(94,28381701,6716,8423,5,13,'44','Normal','No se observan','Se observan','Se observan'),(95,7209476,2179,8423,5,15,'42','Abundantes','Se observan','Se observan','Se observan'),(96,2101411,4634,8423,5,13,'42','Escasas','No se observan','No se observan','Se observan'),(97,21055563,3979,8423,5,13,'38','Normal','Se observan','No se observan','Se observan'),(98,10008053,2179,8423,4,15,'40','Abundantes','No se observan','Se observan','No se observan'),(99,5583783,3979,8423,5,13,'45','Escasas','No se observan','No se observan','No se observan'),(100,10008053,2179,8423,4,15,'43','Normal','No se observan','No se observan','Se observan');
+/*!40000 ALTER TABLE `analisis_orina` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `analisis_sangre`
+--
+
+DROP TABLE IF EXISTS `analisis_sangre`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `analisis_sangre` (
+  `id_analisis_s` int unsigned NOT NULL AUTO_INCREMENT,
+  `DNI` int DEFAULT NULL,
+  `id_seguro` int DEFAULT NULL,
+  `id_inst` int DEFAULT NULL,
+  `hemoglobina` int DEFAULT NULL,
+  `hematocritos` int DEFAULT NULL,
+  `hematies` int DEFAULT NULL,
+  `globulos blancos` int DEFAULT NULL,
+  `neutrofilos` int DEFAULT NULL,
+  `eosinofilos` int DEFAULT NULL,
+  `basofilos` int DEFAULT NULL,
+  `linfocitos` int DEFAULT NULL,
+  `monocitos` int DEFAULT NULL,
+  `mcv` int DEFAULT NULL,
+  `hcm` int DEFAULT NULL,
+  PRIMARY KEY (`id_analisis_s`),
+  UNIQUE KEY `id_analisis_s_UNIQUE` (`id_analisis_s`)
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `analisis_sangre`
+--
+
+LOCK TABLES `analisis_sangre` WRITE;
+/*!40000 ALTER TABLE `analisis_sangre` DISABLE KEYS */;
+INSERT INTO `analisis_sangre` VALUES (1,2101411,4634,776,14,44,5,9,0,41,5,0,38,11,91),(2,2101411,4634,776,15,46,5,8,1,24,3,1,39,11,87),(3,2101411,4634,776,14,42,5,4,2,62,9,1,25,6,89),(4,2101411,4634,776,12,40,5,10,0,65,8,1,31,10,94),(5,2101411,4634,776,12,41,5,8,5,16,8,1,24,9,92),(6,3174656,1586,776,14,43,5,8,1,74,9,0,33,6,99),(7,3174656,1586,776,12,38,5,7,1,26,6,0,44,10,97),(8,3174656,1586,776,14,44,5,5,1,79,9,0,23,7,86),(9,3174656,1586,776,12,41,4,7,3,19,3,1,38,6,94),(10,3174656,1586,776,14,44,5,8,4,69,9,0,32,6,87),(11,4020089,7746,1101,15,47,4,6,2,17,7,0,41,10,87),(12,4020089,7746,1101,15,38,4,6,1,30,9,1,37,7,96),(13,4020089,7746,1101,14,45,5,9,1,43,5,1,28,9,87),(14,4020089,7746,1101,14,46,5,8,3,87,0,0,35,9,92),(15,4020089,7746,1101,14,47,5,8,2,50,1,1,46,10,87),(16,5583783,3979,1101,15,38,4,9,4,8,1,0,22,9,95),(17,5583783,3979,1101,13,41,5,9,1,11,8,1,37,8,88),(18,5583783,3979,1101,12,42,4,4,3,13,7,1,22,11,94),(19,5583783,3979,1101,15,45,4,7,0,83,1,1,39,7,90),(20,5583783,3979,1101,12,48,4,9,2,7,6,0,45,12,84),(21,7209476,2179,1364,15,45,4,5,1,40,8,1,44,5,88),(22,7209476,2179,1364,14,48,5,5,3,88,2,1,22,7,87),(23,7209476,2179,1364,13,46,5,9,4,79,5,0,39,11,91),(24,7209476,2179,1364,14,41,4,4,5,18,7,1,43,8,96),(25,7209476,2179,1364,14,40,4,5,4,5,9,0,43,5,92),(26,8033642,7746,1364,14,46,4,6,5,43,9,1,42,5,97),(27,8033642,7746,1364,15,41,4,9,0,92,8,0,41,9,96),(28,8033642,7746,1364,14,44,4,10,1,90,0,0,41,6,90),(29,8033642,7746,1364,13,48,5,6,5,73,1,1,37,10,86),(30,8033642,7746,1364,12,48,5,10,2,63,6,0,39,7,90),(31,8201738,2021,2068,12,48,5,9,3,68,2,0,31,12,85),(32,8201738,2021,2068,14,48,5,8,1,54,5,0,32,10,98),(33,8201738,2021,2068,15,40,4,9,0,74,9,1,31,6,84),(34,8201738,2021,2068,14,40,4,9,4,91,2,1,43,11,84),(35,8201738,2021,2068,13,43,4,4,1,22,6,1,38,11,89),(36,10008053,2179,2068,13,44,4,9,5,7,8,0,27,12,92),(37,10008053,2179,2068,13,45,5,4,5,43,6,1,25,11,88),(38,10008053,2179,2068,12,43,5,9,0,83,1,1,21,9,84),(39,10008053,2179,2068,13,43,4,8,4,43,7,0,21,11,85),(40,10008053,2179,2068,12,48,5,9,4,28,2,0,37,12,97),(41,10484173,7699,2746,13,41,4,10,0,86,9,0,31,10,90),(42,10484173,7699,2746,12,40,5,9,3,52,9,1,30,11,99),(43,10484173,7699,2746,14,48,5,5,3,74,3,0,31,10,93),(44,10484173,7699,2746,12,40,4,6,3,40,7,1,25,9,86),(45,10484173,7699,2746,12,45,4,5,2,37,9,0,42,9,92),(46,10690610,4698,2746,12,41,4,7,2,95,2,0,38,11,94),(47,10690610,4698,2746,14,44,4,9,0,74,3,1,39,10,96),(48,10690610,4698,2746,14,42,5,7,1,65,8,0,34,5,84),(49,10690610,4698,2746,13,44,4,10,5,64,0,0,24,10,94),(50,10690610,4698,2746,15,43,5,5,2,73,8,1,35,7,88),(51,12716747,1688,2860,14,39,4,7,3,6,9,1,42,6,98),(52,12716747,1688,2860,15,41,5,5,2,14,9,0,36,10,94),(53,12716747,1688,2860,12,48,5,5,5,20,3,1,26,12,93),(54,12716747,1688,2860,13,44,5,7,5,13,4,0,40,6,97),(55,12716747,1688,2860,13,39,5,8,5,29,3,0,29,8,86),(56,14281833,7746,2860,14,45,5,4,1,55,2,0,32,6,91),(57,14281833,7746,2860,12,46,4,7,0,25,1,1,38,11,90),(58,14281833,7746,2860,15,47,4,9,5,46,1,1,23,8,95),(59,14281833,7746,2860,15,47,5,7,3,67,7,1,31,7,90),(60,14281833,7746,2860,13,45,4,6,0,78,2,0,24,10,93),(61,21055563,3979,3426,12,38,4,6,0,33,7,1,44,8,95),(62,21055563,3979,3426,12,38,5,4,5,99,1,1,41,12,97),(63,21055563,3979,3426,15,43,5,5,4,69,3,0,40,5,90),(64,21055563,3979,3426,15,43,4,9,0,50,1,0,46,10,86),(65,21055563,3979,3426,15,40,4,7,4,66,4,0,30,6,93),(66,21220038,3993,3426,13,42,5,8,2,90,2,1,27,5,89),(67,21220038,3993,3426,12,42,5,9,2,91,9,1,26,11,90),(68,21220038,3993,3426,15,48,4,10,1,4,2,1,24,8,93),(69,21220038,3993,3426,14,45,4,7,0,51,1,0,40,12,98),(70,21220038,3993,3426,14,43,4,10,0,26,3,1,28,7,86),(71,22844894,4698,4495,13,39,5,10,1,20,4,1,31,7,97),(72,22844894,4698,4495,12,38,5,5,4,34,6,1,34,6,99),(73,22844894,4698,4495,13,43,4,10,4,57,8,1,42,5,86),(74,22844894,4698,4495,14,42,5,6,1,3,2,0,44,10,86),(75,22844894,4698,4495,13,47,4,9,4,81,7,1,37,9,99),(76,24313407,5673,4495,15,45,5,9,0,27,7,1,35,8,97),(77,24313407,5673,4495,14,48,4,8,1,67,8,1,22,5,89),(78,24313407,5673,4495,14,38,5,7,2,39,1,1,28,5,99),(79,24313407,5673,4495,13,46,4,8,1,46,7,1,46,7,84),(80,24313407,5673,4495,12,45,4,10,0,25,4,0,38,9,90),(81,27441537,6716,6290,12,43,4,8,1,35,0,1,35,10,93),(82,27441537,6716,6290,12,42,5,5,1,62,4,1,37,11,98),(83,27441537,6716,6290,13,39,4,5,2,81,7,0,44,10,89),(84,27441537,6716,6290,14,44,5,8,5,70,5,1,29,6,86),(85,27441537,6716,6290,15,46,5,9,1,59,0,1,23,12,93),(86,28381701,1586,6290,12,39,5,9,5,30,3,0,45,12,93),(87,28381701,1586,6290,15,39,5,7,5,39,8,1,34,5,90),(88,28381701,1586,6290,15,40,4,7,0,5,4,0,40,12,93),(89,28381701,1586,6290,15,48,4,10,4,50,3,1,33,6,91),(90,28381701,1586,6290,12,45,4,4,3,94,2,0,45,6,91),(91,30954371,3993,8423,14,45,4,7,5,46,7,0,35,11,95),(92,30954371,3993,8423,12,41,4,9,2,58,9,0,35,11,86),(93,30954371,3993,8423,14,44,5,8,2,96,1,1,23,7,98),(94,30954371,3993,8423,13,46,4,9,3,73,0,1,43,5,92),(95,30954371,3993,8423,13,40,4,6,1,6,6,0,37,10,91),(96,32408281,471,8423,15,45,5,9,5,56,7,1,42,9,88),(97,32408281,471,8423,12,38,4,10,3,71,8,0,25,10,90),(98,32408281,471,8423,15,45,4,10,0,30,6,1,45,12,95),(99,32408281,471,8423,12,40,5,9,1,13,1,1,24,5,88),(100,32408281,471,8423,14,44,5,6,4,74,9,1,26,5,92);
+/*!40000 ALTER TABLE `analisis_sangre` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `estudios`
 --
-CREATE SCHEMA seguros_db;
-USE seguros_db;
 
 DROP TABLE IF EXISTS `estudios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -518,4 +590,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-09 23:31:10
+-- Dump completed on 2024-02-20 11:52:57
